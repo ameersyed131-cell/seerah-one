@@ -20,7 +20,8 @@
       --border: #e0e0e0;
       --font: 'Cormorant Garamond', serif;
     }
-    body { font-family: var(--font); color: var(--text); background: var(--white); }
+    html { font-size: 16px; }
+    body { font-family: var(--font); color: var(--text); background: var(--white); line-height: 1.6; }
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
     button { font-family: var(--font); cursor: pointer; border: none; }
@@ -29,8 +30,8 @@
 
     /* LOADER */
     #loader { position: fixed; inset: 0; background: var(--white); z-index: 9999; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 18px; transition: opacity 0.6s; }
-    .loader-words { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 10px; max-width: 95vw; padding: 0 12px; }
-    .loader-word { font-family: var(--font); font-size: clamp(0.85rem, 3.5vw, 2.2rem); font-weight: 700; color: var(--navy); opacity: 0; transform: translateY(-24px); animation: wordIn 0.5s forwards; white-space: nowrap; }
+    .loader-words { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 10px; max-width: 90vw; padding: 0 16px; }
+    .loader-word { font-family: var(--font); font-size: clamp(1rem, 4vw, 2.2rem); font-weight: 700; color: var(--navy); opacity: 0; transform: translateY(-24px); animation: wordIn 0.5s forwards; white-space: nowrap; }
     .loader-word.accent { color: var(--orange); }
     .loader-word:nth-child(1) { animation-delay: 0.1s; }
     .loader-word:nth-child(2) { animation-delay: 0.3s; }
@@ -46,7 +47,7 @@
     .nav-logo { background: none; border: none; cursor: pointer; padding: 0; }
     .nav-logo img { height: 44px; width: auto; }
     .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
-    .nav-links button { background: none; border: none; color: rgba(255,255,255,0.8); font-size: 0.95rem; font-weight: 600; font-family: var(--font); cursor: pointer; transition: color 0.2s; }
+    .nav-links button { background: none; border: none; color: rgba(255,255,255,0.8); font-size: 1rem; font-weight: 600; font-family: var(--font); cursor: pointer; transition: color 0.2s; }
     .nav-links button:hover { color: var(--orange); }
     .nav-links button.active { color: var(--orange); }
     .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
@@ -57,7 +58,7 @@
       .nav-toggle { display: flex; }
     }
 
-    .btn-orange { display: inline-block; background: var(--orange); color: var(--white); font-weight: 700; font-size: 0.9rem; padding: 12px 28px; border-radius: 8px; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 16px rgba(224,120,32,0.3); font-family: var(--font); cursor: pointer; border: none; }
+    .btn-orange { display: inline-block; background: var(--orange); color: var(--white); font-weight: 700; font-size: 1rem; padding: 12px 28px; border-radius: 8px; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 16px rgba(224,120,32,0.3); font-family: var(--font); cursor: pointer; border: none; }
     .btn-orange:hover { background: #c96b18; transform: translateY(-2px); }
 
     /* HERO */
@@ -65,38 +66,43 @@
     .hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.55; z-index: 0; }
     .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(13,31,60,0.9) 0%, rgba(13,31,60,0.7) 50%, rgba(13,31,60,0.4) 100%); z-index: 1; }
     .hero-content { position: relative; z-index: 2; padding: clamp(48px,8vw,80px) clamp(24px,6vw,80px); max-width: 700px; }
-    .hero-content h1 { font-size: clamp(1.8rem,4.5vw,2.8rem); font-weight: 700; line-height: 1.3; color: var(--white); margin-bottom: 20px; }
-    .hero-content h1 span { color: var(--orange); }
-    .hero-content p { color: rgba(255,255,255,0.85); font-size: clamp(0.9rem,2vw,1rem); line-height: 1.75; max-width: 520px; margin-bottom: 28px; }
+    .hero-content h1 { font-size: clamp(1.8rem,4.5vw,2.8rem); font-weight: 700; line-height: 1.3; color: #fff; margin-bottom: 20px; }
+    .hero-content p { color: rgba(255,255,255,0.9); font-size: clamp(1rem,2.2vw,1.15rem); line-height: 1.75; max-width: 560px; margin-bottom: 28px; }
 
     .quote-section { background: var(--white); text-align: center; padding: clamp(40px,6vw,64px) 24px; }
     .quote-section p.main-quote { font-size: clamp(1.1rem,2.5vw,1.6rem); max-width: 760px; margin: 0 auto; line-height: 1.6; color: var(--text); }
     .quote-section p.main-quote .accent { color: var(--orange); font-weight: 700; }
-    .quote-section .ref { font-size: 0.85rem; color: var(--text-muted); margin-top: 12px; }
+    .quote-section .ref { font-size: 0.9rem; color: var(--text-muted); margin-top: 12px; }
 
     .what-section { background: var(--white); padding: 0 24px clamp(40px,6vw,56px); }
     .what-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
     @media (min-width: 768px) { .what-inner { grid-template-columns: 1fr 1fr; gap: 56px; } }
     .images-flex { display: flex; gap: 12px; min-height: 300px; }
-    .img-panel { flex: 0.5; overflow: hidden; border-radius: 14px; transition: flex 0.5s cubic-bezier(.4,0,.2,1), box-shadow 0.35s; cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-    .img-panel:hover { flex: 1.6; box-shadow: 0 12px 40px rgba(0,0,0,0.22); }
-    .images-flex:hover .img-panel { flex: 0.4; }
+    .img-panel { flex: 1; overflow: hidden; border-radius: 14px; transition: flex 0.5s cubic-bezier(.4,0,.2,1), box-shadow 0.35s; cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .img-panel:hover { flex: 2.5; box-shadow: 0 12px 40px rgba(0,0,0,0.22); }
+    .images-flex:hover .img-panel { flex: 0.7; }
+    .images-flex:hover .img-panel:hover { flex: 2.5; }
     .img-panel img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
-    .what-text p { font-size: 1rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 24px; }
+    @media (max-width: 767px) {
+      .images-flex { flex-direction: column; min-height: auto; gap: 16px; }
+      .img-panel { flex: none; height: 220px; }
+      .img-panel:hover, .images-flex:hover .img-panel, .images-flex:hover .img-panel:hover { flex: none; }
+    }
+    .what-text p { font-size: clamp(1rem,2.2vw,1.1rem); color: var(--text); line-height: 1.8; margin-bottom: 24px; }
 
     .insights-section { background: var(--navy); padding: clamp(56px,8vw,80px) 24px; }
     .insights-section h2 { text-align: center; font-size: clamp(1.6rem,3.5vw,2.4rem); font-weight: 800; color: var(--white); margin-bottom: 16px; }
     .insights-section h2 span { color: var(--orange); }
-    .insights-section .sub { text-align: center; color: rgba(255,255,255,0.75); font-size: 0.95rem; max-width: 900px; margin: 0 auto 40px; line-height: 1.7; }
+    .insights-section .sub { text-align: center; color: rgba(255,255,255,0.85); font-size: clamp(0.95rem,2vw,1.05rem); max-width: 900px; margin: 0 auto 40px; line-height: 1.8; }
     .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 1180px; margin: 0 auto 36px; }
     .insight-card { background: var(--white); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; text-decoration: none; color: inherit; }
     .insight-card:hover { transform: translateY(-6px); box-shadow: 0 10px 32px rgba(0,0,0,0.2); }
     .insight-card .card-img { height: 176px; overflow: hidden; }
     .insight-card .card-img img { width: 100%; height: 100%; object-fit: cover; }
     .insight-card .card-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
-    .insight-card h3 { font-size: 1.05rem; font-weight: 800; color: var(--text); margin-bottom: 10px; }
-    .insight-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; flex: 1; }
-    .insight-card .cta { color: var(--orange); font-weight: 700; font-size: 0.88rem; }
+    .insight-card h3 { font-size: 1.1rem; font-weight: 800; color: var(--text); margin-bottom: 10px; }
+    .insight-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; flex: 1; }
+    .insight-card .cta { color: var(--orange); font-weight: 700; font-size: 0.9rem; }
     .insights-cta { text-align: center; }
 
     .allies-section { background: var(--white); padding: clamp(56px,8vw,80px) 24px; }
@@ -105,7 +111,7 @@
     .allies-text { flex-shrink: 0; max-width: 320px; }
     .allies-text h2 { font-size: clamp(1.6rem,3.5vw,2.2rem); font-weight: 700; color: var(--text); margin-bottom: 16px; }
     .allies-text h2 span { color: var(--orange); }
-    .allies-text p { color: var(--text-muted); font-size: 1rem; line-height: 1.7; }
+    .allies-text p { color: var(--text-muted); font-size: clamp(0.95rem,2vw,1.05rem); line-height: 1.8; }
     .allies-box { flex: 1; border: 2px solid var(--orange); border-radius: 18px; padding: 24px; width: 100%; }
     .allies-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
     @media (max-width: 768px) { .allies-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; } }
@@ -123,26 +129,26 @@
     .voice-card:hover { transform: translateY(-8px); box-shadow: 0 20px 56px rgba(0,0,0,0.28); }
     .voice-quote-open, .voice-quote-close { font-size: 3rem; line-height: 1; color: var(--orange); font-weight: 700; }
     .voice-quote-close { text-align: right; margin-bottom: 12px; }
-    .voice-text { flex: 1; font-size: 0.9rem; color: var(--text); line-height: 1.65; margin: 8px 0 10px; }
+    .voice-text { flex: 1; font-size: 0.95rem; color: var(--text); line-height: 1.7; margin: 8px 0 10px; }
     .voice-footer { display: flex; align-items: center; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(0,0,0,0.08); }
     .voice-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
-    .voice-name { font-weight: 700; font-size: 0.9rem; color: var(--orange); }
-    .voice-role { font-size: 0.78rem; color: var(--text-muted); }
+    .voice-name { font-weight: 700; font-size: 0.95rem; color: var(--orange); }
+    .voice-role { font-size: 0.82rem; color: var(--text-muted); }
     .voices-cta { text-align: center; }
 
     .why-section { background: var(--white); padding: clamp(56px,8vw,80px) 24px; }
     .why-inner { max-width: 900px; margin: 0 auto; }
     .why-inner h2 { font-size: clamp(1.6rem,3.5vw,2.2rem); font-weight: 700; color: var(--text); margin-bottom: 8px; }
     .why-inner h2 span { color: var(--orange); }
-    .why-inner > p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 32px; }
+    .why-inner > p { color: var(--text-muted); font-size: clamp(0.95rem,2vw,1.05rem); line-height: 1.8; margin-bottom: 32px; }
     .faq-item { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 12px; }
-    .faq-question { width: 100%; padding: 18px 20px; font-weight: 600; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1rem; background: var(--white); border: none; font-family: var(--font); text-align: left; transition: background 0.2s; }
+    .faq-question { width: 100%; padding: 18px 20px; font-weight: 600; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.05rem; background: var(--white); border: none; font-family: var(--font); text-align: left; transition: background 0.2s; }
     .faq-question:hover { background: #faf9f4; }
     .faq-chevron { transition: transform 0.3s; font-size: 1.1rem; color: var(--orange); }
     .faq-question.open .faq-chevron { transform: rotate(180deg); }
     .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s; }
     .faq-answer.open { max-height: 200px; }
-    .faq-answer-inner { padding: 0 20px 16px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; }
+    .faq-answer-inner { padding: 0 20px 16px; color: var(--text-muted); font-size: 1rem; line-height: 1.8; }
 
     .stats-section { background: var(--navy); padding: clamp(56px,8vw,80px) 24px; }
     .stats-title { text-align: center; font-size: clamp(1.4rem,3vw,2rem); font-weight: 800; color: var(--white); margin-bottom: 48px; }
@@ -151,20 +157,20 @@
     @media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
     .stat-item { display: flex; flex-direction: column; align-items: center; gap: 12px; transition: transform 0.3s; cursor: default; }
     .stat-item:hover { transform: translateY(-10px) scale(1.07); }
-    .stat-icon-wrap { width: 100px; height: 80px; background: var(--white); border-radius: 10px; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
-    .stat-icon-wrap img { width: 100%; height: 100%; object-fit: contain; padding: 4px; }
+    .stat-icon-wrap { width: 110px; height: 90px; background: var(--white); border-radius: 12px; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .stat-icon-wrap img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
     .stat-number { font-size: clamp(1.6rem,4vw,2rem); font-weight: 800; color: var(--white); }
-    .stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.7); text-align: center; }
+    .stat-label { font-size: 0.9rem; color: rgba(255,255,255,0.8); text-align: center; }
 
     .freebook-section { background: var(--navy); border-top: 4px solid rgba(255,255,255,0.4); padding: clamp(48px,6vw,64px) 24px; }
     .freebook-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 32px; text-align: center; }
     @media (min-width: 768px) { .freebook-inner { flex-direction: row; justify-content: space-between; text-align: left; } }
     .freebook-inner h2 { font-size: clamp(1.5rem,3vw,2rem); font-weight: 700; color: var(--white); margin-bottom: 10px; }
     .freebook-inner h2 span { color: var(--orange); }
-    .freebook-inner p { color: rgba(255,255,255,0.7); font-size: 0.95rem; margin-bottom: 20px; max-width: 420px; }
+    .freebook-inner p { color: rgba(255,255,255,0.8); font-size: 1rem; margin-bottom: 20px; max-width: 420px; }
     .free-book-img { flex-shrink: 0; width: 340px; filter: drop-shadow(-10px 14px 28px rgba(0,0,0,0.45)); }
     @media (max-width: 640px) { .free-book-img { width: 240px; } }
-    .btn-wa { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: var(--white); font-weight: 700; font-size: 0.9rem; padding: 12px 28px; border-radius: 8px; border: none; cursor: pointer; font-family: var(--font); transition: background 0.2s, transform 0.2s; }
+    .btn-wa { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: var(--white); font-weight: 700; font-size: 1rem; padding: 12px 28px; border-radius: 8px; border: none; cursor: pointer; font-family: var(--font); transition: background 0.2s, transform 0.2s; }
     .btn-wa:hover { background: #c96b18; transform: translateY(-2px); }
     .btn-wa svg { width: 18px; height: 18px; fill: var(--white); }
 
@@ -174,13 +180,13 @@
     .ws-hero-content { position: relative; z-index: 2; text-align: center; padding: 64px 24px; max-width: 760px; margin: 0 auto; }
     .ws-hero-content h1 { font-size: clamp(2.4rem,5vw,3.2rem); font-weight: 700; color: var(--white); margin-bottom: 16px; }
     .ws-hero-content h1 span { color: var(--orange); }
-    .ws-hero-content p { color: rgba(255,255,255,0.9); font-size: 1rem; max-width: 640px; margin: 0 auto; line-height: 1.7; }
+    .ws-hero-content p { color: rgba(255,255,255,0.9); font-size: clamp(1rem,2.2vw,1.1rem); max-width: 640px; margin: 0 auto; line-height: 1.8; }
 
     .tabs { background: var(--white); padding: 32px 24px; border-bottom: 1px solid var(--border); }
     .tabs-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     @media (min-width: 768px) { .tabs-inner { display: flex; flex-wrap: wrap; justify-content: center; } }
-    .tab { padding: 10px 16px; border-radius: 8px; border: 2px solid var(--orange); font-weight: 600; font-size: 0.78rem; background: var(--white); color: var(--orange); transition: all 0.2s; font-family: var(--font); cursor: pointer; text-align: center; }
-    @media (min-width: 768px) { .tab { font-size: 0.9rem; padding: 10px 20px; } }
+    .tab { padding: 10px 16px; border-radius: 8px; border: 2px solid var(--orange); font-weight: 600; font-size: 0.85rem; background: var(--white); color: var(--orange); transition: all 0.2s; font-family: var(--font); cursor: pointer; text-align: center; }
+    @media (min-width: 768px) { .tab { font-size: 0.95rem; padding: 10px 20px; } }
     .tab:hover { background: rgba(224,120,32,0.1); }
     .tab.active { background: var(--orange); color: var(--white); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
 
@@ -188,21 +194,20 @@
     .ws-main-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 40px; }
     @media (min-width: 1024px) { .ws-main-inner { grid-template-columns: 2fr 1fr; gap: 48px; align-items: start; } }
     .ws-media { width: 100%; aspect-ratio: 16/9; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,0.18); object-fit: cover; }
-    .ws-media.video { background: #000; }
     .ws-content h2 { font-size: clamp(1.6rem,3.5vw,2.1rem); font-weight: 700; color: var(--text); margin: 32px 0 8px; }
     .ws-content h2 span { color: var(--orange); }
-    .ws-sub { font-size: 0.8rem; font-weight: 600; color: rgba(0,0,0,0.6); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 20px; }
-    .ws-content p { color: var(--text); font-size: 0.95rem; line-height: 1.75; margin-bottom: 16px; }
+    .ws-sub { font-size: 0.85rem; font-weight: 600; color: rgba(0,0,0,0.6); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 20px; }
+    .ws-content p { color: var(--text); font-size: clamp(1rem,2vw,1.05rem); line-height: 1.8; margin-bottom: 16px; }
     .sidebar { display: flex; flex-direction: column; gap: 24px; }
     .card { border-radius: 16px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
     .card-host { background: var(--white); border: 2px solid var(--orange); }
     .card-sponsor { background: #eef4fb; border: 2px solid var(--navy-deep); }
-    .card h3 { font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+    .card h3 { font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 16px; }
     .card ul { list-style: none; margin-bottom: 20px; }
-    .card ul li { display: flex; align-items: center; gap: 12px; font-size: 0.92rem; color: var(--text); margin-bottom: 12px; }
+    .card ul li { display: flex; align-items: center; gap: 12px; font-size: 0.95rem; color: var(--text); margin-bottom: 12px; }
     .card ul li::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
-    .card p { font-size: 0.9rem; color: rgba(0,0,0,0.8); line-height: 1.65; margin-bottom: 20px; }
-    .btn-full { width: 100%; color: var(--white); font-weight: 700; font-size: 0.9rem; padding: 12px; border-radius: 8px; font-family: var(--font); cursor: pointer; border: none; transition: background 0.2s; }
+    .card p { font-size: 0.95rem; color: rgba(0,0,0,0.8); line-height: 1.7; margin-bottom: 20px; }
+    .btn-full { width: 100%; color: var(--white); font-weight: 700; font-size: 0.95rem; padding: 12px; border-radius: 8px; font-family: var(--font); cursor: pointer; border: none; transition: background 0.2s; }
     .btn-full.orange { background: var(--orange); }
     .btn-full.orange:hover { background: #c96b18; }
     .btn-full.navy { background: var(--navy-deep); }
@@ -215,13 +220,13 @@
     @media (min-width: 768px) { .walk-overlay { width: 48%; background: rgba(59, 103, 155, 0.86); padding: 40px; } }
     .walk-overlay h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 16px; }
     .walk-overlay h3 span { color: var(--orange); }
-    .walk-overlay p { font-size: 0.88rem; line-height: 1.7; margin-bottom: 12px; }
+    .walk-overlay p { font-size: 0.95rem; line-height: 1.8; margin-bottom: 12px; }
     .walk-overlay p .accent { color: var(--orange); font-weight: 600; }
 
     .ws-cta { background: var(--navy-deep); padding: 64px 24px; text-align: center; }
     .ws-cta-inner { max-width: 700px; margin: 0 auto; }
     .ws-cta h2 { font-size: clamp(1.8rem,4vw,2.4rem); font-weight: 700; color: var(--white); margin-bottom: 16px; }
-    .ws-cta p { color: rgba(255,255,255,0.85); font-size: 1rem; line-height: 1.7; margin-bottom: 28px; }
+    .ws-cta p { color: rgba(255,255,255,0.85); font-size: 1.05rem; line-height: 1.8; margin-bottom: 28px; }
 
     .about-hero { position: relative; min-height: 320px; display: flex; align-items: center; justify-content: center; overflow: hidden; background: var(--navy); }
     .about-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; }
@@ -229,7 +234,7 @@
     .about-hero-content { position: relative; z-index: 2; text-align: center; padding: 48px 24px; }
     .about-hero-content h1 { font-size: clamp(2.2rem,5vw,3rem); font-weight: 700; color: var(--white); margin-bottom: 16px; }
     .about-hero-content h1 span { color: var(--orange); }
-    .about-hero-content p { color: rgba(255,255,255,0.9); font-size: 1rem; max-width: 640px; margin: 0 auto; line-height: 1.7; }
+    .about-hero-content p { color: rgba(255,255,255,0.9); font-size: clamp(1rem,2.2vw,1.1rem); max-width: 640px; margin: 0 auto; line-height: 1.8; }
 
     .about-main { background: var(--white); padding: clamp(56px,8vw,80px) 24px; }
     .about-main .container { max-width: 1100px; margin: 0 auto; }
@@ -240,12 +245,12 @@
     .about-img-box img { width: 100%; height: 420px; object-fit: cover; }
     .badge-countries { position: absolute; bottom: 20px; right: 20px; background: var(--orange); color: var(--white); padding: 12px 20px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.2); text-align: center; }
     .badge-countries .num { font-weight: 700; font-size: 1.5rem; line-height: 1; }
-    .badge-countries .lbl { font-size: 0.75rem; margin-top: 4px; }
+    .badge-countries .lbl { font-size: 0.8rem; margin-top: 4px; }
     .about-text h2 { font-size: clamp(1.6rem,3.5vw,2.1rem); font-weight: 700; color: #000; margin-bottom: 20px; line-height: 1.3; }
-    .about-text .quote { color: var(--orange); font-style: italic; font-size: 1.25rem; margin-bottom: 20px; line-height: 1.6; }
-    .about-text p { color: #000; font-size: 0.95rem; line-height: 1.75; margin-bottom: 16px; }
+    .about-text .quote { color: var(--orange); font-style: italic; font-size: clamp(1.1rem,2.5vw,1.25rem); margin-bottom: 20px; line-height: 1.6; }
+    .about-text p { color: #000; font-size: clamp(1rem,2vw,1.05rem); line-height: 1.8; margin-bottom: 16px; }
     .about-body { margin-top: 40px; }
-    .about-body p { color: #000; font-size: 0.95rem; line-height: 1.75; margin-bottom: 16px; }
+    .about-body p { color: #000; font-size: clamp(1rem,2vw,1.05rem); line-height: 1.8; margin-bottom: 16px; }
     .signature { font-style: italic; font-size: 1.5rem; color: #000; text-align: right; margin-top: 24px; }
 
     .about-testimonials { background: var(--navy); padding: clamp(56px,8vw,80px) 24px; }
@@ -261,7 +266,7 @@
     @media (min-width: 768px) { .about-volunteer-inner { grid-template-columns: 1fr 1fr; gap: 56px; } }
     .about-volunteer h2 { font-size: clamp(1.8rem,4vw,2.4rem); font-weight: 700; color: var(--white); margin-bottom: 16px; }
     .about-volunteer h2 span { color: var(--orange); }
-    .about-volunteer p { color: rgba(255,255,255,0.85); font-size: 0.95rem; max-width: 620px; margin: 0 0 24px; line-height: 1.7; }
+    .about-volunteer p { color: rgba(255,255,255,0.85); font-size: clamp(1rem,2vw,1.05rem); max-width: 620px; margin: 0 0 24px; line-height: 1.8; }
     .volunteer-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .v-img { border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.2); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
     .v-img:hover { transform: translateY(-8px); box-shadow: 0 20px 56px rgba(0,0,0,0.4); }
@@ -272,7 +277,7 @@
     .blog-hero { background: var(--navy); padding: 64px 24px; text-align: center; }
     .blog-hero h1 { font-size: clamp(2rem,4vw,2.8rem); font-weight: 700; color: var(--white); margin-bottom: 12px; }
     .blog-hero h1 span { color: var(--orange); }
-    .blog-hero p { color: rgba(255,255,255,0.8); font-size: 1rem; max-width: 600px; margin: 0 auto; }
+    .blog-hero p { color: rgba(255,255,255,0.8); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
     .blog-list { background: var(--white); padding: 64px 24px; }
     .blog-list-inner { max-width: 1100px; margin: 0 auto; }
     .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
@@ -280,20 +285,21 @@
     .blog-card:hover { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(0,0,0,0.12); }
     .blog-card img { width: 100%; height: 200px; object-fit: cover; }
     .blog-card-body { padding: 20px; }
-    .blog-card-category { color: var(--orange); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; }
-    .blog-card h3 { font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 10px; line-height: 1.4; }
-    .blog-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 14px; }
-    .blog-card-meta { font-size: 0.8rem; color: var(--text-muted); }
+    .blog-card-category { color: var(--orange); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; }
+    .blog-card h3 { font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 10px; line-height: 1.4; }
+    .blog-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 14px; }
+    .blog-card-meta { font-size: 0.85rem; color: var(--text-muted); }
 
+    /* POPUP */
     .popup-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); z-index: 1000; display: none; align-items: center; justify-content: center; padding: 16px; }
     .popup-backdrop.open { display: flex; }
     .popup-box { background: var(--white); border-radius: 18px; box-shadow: 0 24px 80px rgba(0,0,0,0.3); width: 100%; max-width: 440px; padding: 36px; position: relative; }
     .popup-close { position: absolute; top: 14px; right: 14px; background: none; border: none; font-size: 1.4rem; color: #888; cursor: pointer; line-height: 1; }
     .popup-title { font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
-    .popup-sub { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 24px; }
+    .popup-sub { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 24px; }
     .form-group { margin-bottom: 16px; }
-    .form-group label { display: block; font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 6px; }
-    .form-group input { width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; font-size: 0.9rem; font-family: var(--font); outline: none; transition: border-color 0.2s; }
+    .form-group label { display: block; font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+    .form-group input { width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; font-size: 1rem; font-family: var(--font); outline: none; transition: border-color 0.2s; }
     .form-group input:focus { border-color: var(--orange); box-shadow: 0 0 0 2px rgba(224,120,32,0.15); }
 
     /* FOOTER - WHITE */
@@ -302,25 +308,25 @@
     @media (min-width: 768px) { .footer-top { flex-direction: row; justify-content: space-between; } }
     .footer-brand { max-width: 280px; }
     .footer-logo { height: 48px; width: auto; margin-bottom: 12px; }
-    .footer-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 18px; }
+    .footer-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 18px; }
     .footer-socials { display: flex; gap: 10px; }
     .footer-socials a { width: 36px; height: 36px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
     .footer-socials a:hover { background: var(--orange); }
     .footer-socials svg { width: 14px; height: 14px; }
     .footer-links { display: flex; gap: 40px; justify-content: flex-start; flex-wrap: wrap; flex: 1; }
     @media (min-width: 768px) { .footer-links { justify-content: flex-end; } }
-    .footer-col h4 { font-size: 0.85rem; font-weight: 700; color: var(--text); margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .footer-col h4 { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.04em; }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-    .footer-col li button { background: none; border: none; color: var(--text-muted); font-size: 0.9rem; font-family: var(--font); cursor: pointer; transition: color 0.2s; padding: 0; text-align: left; }
+    .footer-col li button { background: none; border: none; color: var(--text-muted); font-size: 0.95rem; font-family: var(--font); cursor: pointer; transition: color 0.2s; padding: 0; text-align: left; }
     .footer-col li button:hover { color: var(--orange); }
     .footer-col .contact-row { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 10px; }
     .footer-col .contact-row svg { flex-shrink: 0; margin-top: 2px; }
-    .footer-col .contact-row span { font-size: 0.9rem; color: var(--text-muted); }
+    .footer-col .contact-row span { font-size: 0.95rem; color: var(--text-muted); }
     .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid var(--border); padding-top: 18px; }
     .footer-bottom-row { width: 100%; display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: flex-start; gap: 12px; }
     @media (min-width: 640px) { .footer-bottom-row { justify-content: space-between; align-items: center; } }
-    .footer-bottom span { font-size: 0.8rem; color: var(--text-muted); }
-    .footer-watermark { display: inline-block; background: var(--navy); color: white; font-size: 0.85rem; font-weight: 600; padding: 8px 20px; border-radius: 8px; transition: background 0.2s; text-decoration: none; }
+    .footer-bottom span { font-size: 0.85rem; color: var(--text-muted); }
+    .footer-watermark { display: inline-block; background: var(--navy); color: white; font-size: 0.9rem; font-weight: 600; padding: 8px 20px; border-radius: 8px; transition: background 0.2s; text-decoration: none; }
     .footer-watermark:hover { background: var(--orange); }
   </style>
 </head>
@@ -363,7 +369,7 @@
         <span style="display:block;color:#fff">Defining <span style="color:var(--orange)">Purpose</span></span>
         <span style="display:block;color:#fff">and Delivering <span style="color:var(--orange)">Excellence</span></span>
       </h1>
-      <p>Applying the Sunnah of the Prophet ( ﷺ ) in our lives  opens the doors to shaping how we think, act, speak, and live. We turn these inspirational moments into a framework to realign our goals to discover our destination. When the Seerah becomes a habit, our purpose becomes clear and the journey becomes meaningful and rewarding. Enabling us to truly experience Ihsan.</p>
+      <p>Applying the Sunnah of the Prophet (ﷺ) in our lives opens the doors to shaping how we think, act, speak, and live. We turn these inspirational moments into a framework to realign our goals to discover our destination. When the Seerah becomes a habit, our purpose becomes clear and the journey becomes meaningful and rewarding. Enabling us to truly experience Ihsan.</p>
       <button class="btn-orange" onclick="document.getElementById('events').scrollIntoView({behavior:'smooth'})">What we do</button>
     </div>
   </div>
@@ -380,7 +386,7 @@
         <div class="img-panel"><img src="https://media.base44.com/images/public/6a19a598f6afa0561d5f727d/767622bde_image.png" alt="Madina" /></div>
       </div>
       <div class="what-text">
-        <p>Start with one honest question: Am I really following the One I say I love? Seerah One gives you quiet space to pause, reflect, and realign your life with the Prophet’s ﷺ example. When distractions pull you every way, the Seerah becomes your anchor helping you find meaning, direction, and the courage to move forward with purpose. </p>
+        <p>Start with one honest question: Am I really following the One I say I love? Seerah One gives you quiet space to pause, reflect, and realign your life with the Prophet's ﷺ example. When distractions pull you every way, the Seerah becomes your anchor helping you find meaning, direction, and the courage to move forward with purpose.</p>
         <button class="btn-orange" onclick="document.getElementById('events').scrollIntoView({behavior:'smooth'})">What we do</button>
       </div>
     </div>
@@ -388,7 +394,7 @@
 
   <div class="insights-section" id="events">
     <h2>Workshop <span>Insights</span></h2>
-    <p class="sub">Our workshops are designed to be interactive, reflective, and deeply personal. Where participants are encouraged to explore, question, and grow, unlike traditional lectures.  Each session combines storytelling, group discussions, and personal reflections. We don't just tell you about the Prophet ( ﷺ ) we help you walk in his footsteps.</p>
+    <p class="sub">Our workshops are designed to be interactive, reflective, and deeply personal. Where participants are encouraged to explore, question, and grow, unlike traditional lectures. Each session combines storytelling, group discussions, and personal reflections. We don't just tell you about the Prophet (ﷺ) we help you walk in his footsteps.</p>
     <div class="cards-grid" id="insightsGrid"></div>
     <div class="insights-cta"><button class="btn-orange" onclick="goPage('workshops')">Get Started</button></div>
   </div>
@@ -427,7 +433,7 @@
       <div>
         <h2>Get your <span>Free Book</span> Here</h2>
         <p>Open to youth and adults seeking a practical, inspiring study of the Seerah.</p>
-        <button class="btn-wa" onclick="waRedirect('Assalamualaikum, I am looking forward to a soft copy of the Seerah book. JazakAllah Khair.')">
+        <button class="btn-wa" onclick="openNamePopup('Free Book Request', 'Assalamualaikum, my name is [NAME]. I am looking forward to a soft copy of the Seerah book. JazakAllah Khair.')">
           <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
           Download now
         </button>
@@ -489,7 +495,7 @@
       <div>
         <h2>Seerah One <br class="mobile-only"><span>Volunteer Team</span></h2>
         <p>Join the SEERAH.ONE Volunteer Team and be part of a community passionate about sharing the life of the Prophet Muhammad ﷺ. Whether you are a student, a professional, or simply someone who loves to learn and share knowledge, we welcome you to join us in our mission to spread the message of Seerah.</p>
-        <button class="btn-orange" onclick="openVolunteerPopup()">Join Seerah One</button>
+        <button class="btn-orange" onclick="openNamePopup('Join Seerah One', 'Assalamualaikum, my name is [NAME]. I am looking to volunteer for Seerah. I would love to be part of the Seerah One movement and help share the life of the Prophet Muhammad ﷺ.')">Join Seerah One</button>
       </div>
       <div class="volunteer-grid" id="volunteerGrid"></div>
     </div>
@@ -523,12 +529,12 @@
         <div class="card card-host">
           <h3>Host a workshop</h3>
           <ul><li>Masjids &amp; NGOs</li><li>Schools / Colleges</li><li>Family events</li><li>Curated events</li></ul>
-          <button class="btn-full orange" onclick="waRedirect('Assalamualaikum, I am looking to host a Seerah workshop. I would love to know more about bringing a session to our community.')">Reach out now</button>
+          <button class="btn-full orange" onclick="openNamePopup('Host a Workshop', 'Assalamualaikum, my name is [NAME]. I am looking to host a Seerah workshop. I would love to know more about bringing a session to our community.')">Reach out now</button>
         </div>
         <div class="card card-sponsor">
           <h3>Sponsor a workshop</h3>
           <p>Empower underprivileged students and teachers with the knowledge of Seerah. Act now for Sadqah Jariyah.</p>
-          <button class="btn-full navy" onclick="waRedirect('Assalamualaikum, I am looking to sponsor a Seerah workshop to empower underprivileged students and teachers. I would love to know more about how I can contribute for Sadqah Jariyah.')">Sponsor a workshop</button>
+          <button class="btn-full navy" onclick="openNamePopup('Sponsor a Workshop', 'Assalamualaikum, my name is [NAME]. I am looking to sponsor a Seerah workshop to empower underprivileged students and teachers. I would love to know more about how I can contribute for Sadqah Jariyah.')">Sponsor a workshop</button>
         </div>
       </div>
     </div>
@@ -552,7 +558,7 @@
     <div class="ws-cta-inner">
       <h2>Let's Get Moving Today</h2>
       <p>Join the Seerah Walk this Saturday or bring a workshop to your community. Be part of a movement that nurtures the body, the heart, and the soul.</p>
-      <button class="btn-orange">Join Now</button>
+      <button class="btn-orange" onclick="openNamePopup('Join the Movement', 'Assalamualaikum, my name is [NAME]. I would love to join the Seerah movement and be part of the community.')">Join Now</button>
     </div>
   </div>
 </div>
@@ -608,16 +614,16 @@
   </div>
 </footer>
 
-<!-- VOLUNTEER POPUP -->
-<div class="popup-backdrop" id="volunteerPopup">
+<!-- NAME POPUP (for all WhatsApp actions) -->
+<div class="popup-backdrop" id="namePopup">
   <div class="popup-box">
-    <button class="popup-close" onclick="closeVolunteerPopup()">&times;</button>
-    <h3 class="popup-title">Join Seerah One</h3>
-    <p class="popup-sub">Enter your name and we'll connect you on WhatsApp to get started.</p>
-    <form onsubmit="submitVolunteer(event)">
+    <button class="popup-close" onclick="closeNamePopup()">&times;</button>
+    <h3 class="popup-title" id="namePopupTitle">Enter Your Name</h3>
+    <p class="popup-sub">We'll connect you on WhatsApp to get started.</p>
+    <form onsubmit="submitNamePopup(event)">
       <div class="form-group">
         <label>Your Name</label>
-        <input type="text" id="volunteerName" placeholder="Enter your full name" required />
+        <input type="text" id="namePopupInput" placeholder="Enter your full name" required />
       </div>
       <button type="submit" class="btn-wa" style="width:100%;justify-content:center;padding:14px;">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
@@ -629,7 +635,7 @@
 
 <script>
 var WHATSAPP_NUMBER = '919980018253';
-var currentVideo = null;
+var pendingWaMessage = '';
 
 // ===== LOADER =====
 window.addEventListener('load', function() {
@@ -654,25 +660,26 @@ function goPage(page) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ===== WHATSAPP =====
-function waRedirect(message) {
-  window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(message), '_blank');
+// ===== NAME POPUP (for all WhatsApp actions) =====
+function openNamePopup(title, message) {
+  pendingWaMessage = message;
+  document.getElementById('namePopupTitle').textContent = title;
+  document.getElementById('namePopup').classList.add('open');
+  setTimeout(function() { document.getElementById('namePopupInput').focus(); }, 100);
 }
-
-// ===== VOLUNTEER POPUP =====
-function openVolunteerPopup() { document.getElementById('volunteerPopup').classList.add('open'); }
-function closeVolunteerPopup() {
-  document.getElementById('volunteerPopup').classList.remove('open');
-  document.getElementById('volunteerName').value = '';
+function closeNamePopup() {
+  document.getElementById('namePopup').classList.remove('open');
+  document.getElementById('namePopupInput').value = '';
+  pendingWaMessage = '';
 }
-function submitVolunteer(e) {
+function submitNamePopup(e) {
   e.preventDefault();
-  var name = document.getElementById('volunteerName').value || '[Your Name]';
-  var msg = "Assalamualaikum, my name is " + name + ". I am looking to volunteer for Seerah. I would love to be part of the Seerah One movement and help share the life of the Prophet Muhammad ﷺ.";
-  waRedirect(msg);
-  closeVolunteerPopup();
+  var name = document.getElementById('namePopupInput').value || '[Your Name]';
+  var msg = pendingWaMessage.replace('[NAME]', name);
+  window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg), '_blank');
+  closeNamePopup();
 }
-document.getElementById('volunteerPopup').addEventListener('click', function(e) { if (e.target === this) closeVolunteerPopup(); });
+document.getElementById('namePopup').addEventListener('click', function(e) { if (e.target === this) closeNamePopup(); });
 
 // ===== WORKSHOP INSIGHTS CARDS =====
 var INSIGHTS = [
@@ -709,7 +716,7 @@ document.getElementById('alliesGrid').innerHTML = ALLIES.map(function(a) {
   return '<div class="ally-circle"><img src="' + a.src + '" alt="' + a.alt + '"/></div>';
 }).join('');
 
-// ===== VOICES (Home - 4 new testimonials) =====
+// ===== VOICES (Home - 4 testimonials) =====
 var VOICES = [
   { text: "The workshop helped me connect the Quran and Hadith with everyday life in a practical way. It made me reflect on small actions we often ignore, like cleanliness, honesty, and avoiding bribery. The Seerah-based examples stayed with me and influenced my decisions even after the session.", name: 'Hafiz Muhammad Althamish', role: 'Bangalore', avatar: 'https://media.base44.com/images/public/6a19a598f6afa0561d5f727d/260b8a9dd_image.png' },
   { text: "This workshop is for everyone—even if you only pray Jummah. If you feel a bit lost, it helps you find that connection. Plus, it's a lot of fun with great food, and definitely not a boring, preachy session! It genuinely connected with me and made me reflect deeply.", name: 'Syed Ayman', role: 'Deloitte - Chennai', avatar: 'https://media.base44.com/images/public/6a19a598f6afa0561d5f727d/49ba71631_image.png' },
@@ -718,7 +725,7 @@ var VOICES = [
 ];
 function voicesHTML() {
   return VOICES.map(function(v) {
-    return '<div class="voice-card"><div class="voice-quote-open">“</div><p class="voice-text">' + v.text + '</p><div class="voice-quote-close">”</div><div class="voice-footer"><img class="voice-avatar" src="' + v.avatar + '" alt="' + v.name + '"/><div><div class="voice-name">' + v.name + '</div><div class="voice-role">' + v.role + '</div></div></div></div>';
+    return '<div class="voice-card"><div class="voice-quote-open">&ldquo;</div><p class="voice-text">' + v.text + '</p><div class="voice-quote-close">&rdquo;</div><div class="voice-footer"><img class="voice-avatar" src="' + v.avatar + '" alt="' + v.name + '"/><div><div class="voice-name">' + v.name + '</div><div class="voice-role">' + v.role + '</div></div></div></div>';
   }).join('');
 }
 document.getElementById('voicesGrid').innerHTML = voicesHTML();
@@ -766,12 +773,12 @@ function toggleFaq(el) {
   if (!isOpen) { ans.classList.add('open'); el.classList.add('open'); }
 }
 
-// ===== BARAKAH STATS =====
+// ===== BARAKAH STATS (updated icons + numbers) =====
 var STATS = [
-  { target: 32, suffix: '+', label: 'Countries Reached', icon: 'https://media.base44.com/images/public/6a19a598f6afa0561d5f727d/d0915a787_image.png' },
-  { target: 10, suffix: '+', label: 'Partnered Schools', icon: 'https://media.base44.com/images/public/6a19a598f6afa0561d5f727d/4197e1427_image.png' },
-  { target: 70, suffix: '+', label: 'Workshops', icon: 'https://media.base44.com/images/public/6a19a598f6afa0561d5f727d/161b33a99_image.png' },
-  { target: 10000, suffix: '+', label: 'Readers', icon: 'https://media.base44.com/images/public/6a19a598f6afa0561d5f727d/3069061d1_image.png' },
+  { target: 32, suffix: '+', label: 'Countries Reached', icon: 'https://media.base44.com/images/public/6a19a598f6afa0561d5f727d/c4310eb2b_image.png' },
+  { target: 10, suffix: '+', label: 'Partnered Schools', icon: 'https://media.base44.com/images/public/6a19a598f6afa0561d5f727d/648fe1004_image.png' },
+  { target: 70, suffix: '+', label: 'Workshops', icon: 'https://media.base44.com/images/public/6a19a598f6afa0561d5f727d/5f27ba7d8_image.png' },
+  { target: 10000, suffix: '+', label: 'Readers', icon: 'https://media.base44.com/images/public/6a19a598f6afa0561d5f727d/e50f1c054_image.png' },
 ];
 document.getElementById('statsGrid').innerHTML = STATS.map(function(s) {
   return '<div class="stat-item"><div class="stat-icon-wrap"><img src="' + s.icon + '" alt="' + s.label + '"/></div><div class="stat-number" data-target="' + s.target + '">0' + s.suffix + '</div><div class="stat-label">' + s.label + '</div></div>';
@@ -796,7 +803,7 @@ var statsObserver = new IntersectionObserver(function(entries) {
 var statsSection = document.querySelector('.stats-section');
 if (statsSection) statsObserver.observe(statsSection);
 
-// ===== VOLUNTEER IMAGES =====
+// ===== VOLUNTEER IMAGES (new 4 photos) =====
 var VOLUNTEER_IMAGES = [
   {src:'https://media.base44.com/images/public/6a19a598f6afa0561d5f727d/80b656503_image.png',alt:'Volunteers group photo'},
   {src:'https://media.base44.com/images/public/6a19a598f6afa0561d5f727d/0e5fb27fd_image.png',alt:'Volunteers with banner'},
@@ -836,7 +843,7 @@ var TAB_CONTENT = {
   },
   'Seerah Explorer': {
     heading: 'Seerah <span>Explorer</span>',
-    media: '<img class="ws-media" src="https://media.base44.com/images/public/6a19a598f6afa0561d5f727d/f917c49ab_image.png" alt="Seerah Explorer" />',
+    media: '<img class="ws-media" src="https://media.base44.com/images/public/6a19a598f6afa0561d5f727d/52618f9cb_WhatsAppImage2026-06-29at90221PM.jpeg" alt="Seerah Explorer" />',
     paragraphs: [
       "This is a reflections led session to learn the Seerah and live by example of the Prophet's (ﷺ) life. Beyond the stories. Start living the experience and reclaim the legacy.",
       "From childhood, we have all grown up hearing stories, Alhamdulillah! Some meaningful, some moral, and some simple tales meant to scare us into sleep. But pause for a moment and ask yourself: have we truly been told the story of the most important figure in human history? And if not, why?",
@@ -849,7 +856,7 @@ var TAB_CONTENT = {
   },
   'Seerah Retreat': {
     heading: 'Seerah <span>Retreat</span>',
-    media: '<img class="ws-media" src="https://media.base44.com/images/public/6a19a598f6afa0561d5f727d/b8eedcc15_image.png" alt="Seerah Retreat" />',
+    media: '<img class="ws-media" src="https://media.base44.com/images/public/6a19a598f6afa0561d5f727d/be2bb5357_WhatsAppImage2026-06-29at90303PM.jpg" alt="Seerah Retreat" />',
     paragraphs: [
       "In a noisy chaotic world, the Seerah is your anchor. Find meaning and purpose through the Prophet's (ﷺ) life. Reflect to fix responsibility, enhance accountability, and set the standards of ethics and morality.",
       "Any meaningful and lasting transformation begins by looking within. Muhasabah is true accountability, an honest assessment of whether our actions align with truth, uphold what is right, and restrain what is wrong. This reflection is easy to speak about, but difficult to practice.",
@@ -873,33 +880,7 @@ function setActiveTab(tab) {
   });
   var c = TAB_CONTENT[tab];
   if (!c) return;
-
-  if (currentVideo) {
-    try { currentVideo.pause(); } catch(e) {}
-    currentVideo = null;
-  }
-
-  var mediaEl = document.getElementById('wsMedia');
-  var mediaStr = c.media;
-
-  if (mediaStr.indexOf('video|') === 0) {
-    var parts = mediaStr.split('|');
-    var src = parts[1];
-    var poster = parts[2];
-    mediaEl.innerHTML = '<video class="ws-media video" controls poster="' + poster + '"><source src="' + src + '" type="video/mp4" /></video>';
-    var vid = mediaEl.querySelector('video');
-    currentVideo = vid;
-    vid.addEventListener('loadedmetadata', function() {
-      vid.currentTime = 0;
-      vid.play().catch(function() {});
-    });
-    vid.addEventListener('ended', function() {
-      vid.pause();
-    });
-  } else {
-    mediaEl.innerHTML = mediaStr;
-  }
-
+  document.getElementById('wsMedia').innerHTML = c.media;
   document.getElementById('wsHeading').innerHTML = c.heading;
   document.getElementById('wsParagraphs').innerHTML = c.paragraphs.map(function(p) {
     return '<p>' + p + '</p>';
